@@ -10,7 +10,7 @@ import Icon, {
 } from "@ant-design/icons";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 const CustomIcon = () => {
   return (

@@ -59,8 +59,8 @@ const Home = () => {
   return (
     <div className="Home overflow-hidden">
       <Carousel autoplay arrows infinite>
-        {CAROUSEL_DATA.map((item) => (
-          <div>
+        {CAROUSEL_DATA.map((item, index) => (
+          <div key={index}>
             <h3
               style={{
                 ...contentStyle,
@@ -169,7 +169,7 @@ const Home = () => {
 
         <div className="bg-[#d8ad63]">
           <div id="AboutMenu2" dir="rtl">
-            <div className="row w-[80%] max-w-[1170px] grid grid-cols-2 gap-[50px] overflow-x-hidden p-[5rem] max-lg:grid-cols-1 max-md:w-[90%] ">
+            <div className="row w-[80%] max-w-[1170px]  grid grid-cols-2 gap-[50px] overflow-x-hidden p-[5rem] max-lg:grid-cols-1 max-md:w-[90%] ">
               <div className="imgWrapper overflow-hidden rounded-md">
                 <img
                   src={baghPimg}
