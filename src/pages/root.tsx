@@ -34,32 +34,39 @@ const TanjeIcon = (props: Partial<CustomIconComponentProps>) => (
 type MenuItem = Required<MenuProps>["items"][number];
 const items: MenuItem[] = [
   {
-    label: "Home",
+    label: <span className="menu-label">Home</span>,
     key: "mail",
-    icon: <HomeFilled style={{ color: "white" }} />,
+    icon: <HomeFilled style={{ color: "white" }} className="menu-icon" />,
   },
   {
-    label: "Menu",
+    label: <span className="menu-label">Menu</span>,
     key: "app",
-    icon: <BookOutlined style={{ color: "white" }} />,
+    icon: <BookOutlined style={{ color: "white" }} className="menu-icon" />,
   },
   {
-    label: "Catering",
+    label: <span className="menu-label">Catering</span>,
     key: "cat",
-    icon: <MenuOutlined style={{ color: "white" }} />,
+    icon: <MenuOutlined style={{ color: "white" }} className="menu-icon" />,
   },
   {
-    label: "Contact",
+    label: <span className="menu-label">Contact</span>,
     key: "SubMenu",
-    icon: <PhoneFilled style={{ color: "white" }} />,
+    icon: <PhoneFilled style={{ color: "white" }} className="menu-icon" />,
+    theme: "dark",
     children: [
       {
         type: "group",
         label: "",
 
         children: [
-          { label: "تماس بگیرید", key: "setting:1" },
-          { label: "درباره ما", key: "setting:2" },
+          {
+            label: "Contact",
+            key: "setting:1",
+          },
+          {
+            label: "About",
+            key: "setting:2",
+          },
         ],
       },
     ],
