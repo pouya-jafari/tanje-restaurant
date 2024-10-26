@@ -8,6 +8,7 @@ import doordashLogo from "../assets/doordashlogo.png";
 import GoogleReviewsWidget from "../components/googleReview";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
 import Icon from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const CustomIcon1 = () => {
   return (
@@ -56,6 +57,14 @@ const contentStyle: React.CSSProperties = {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
+  const navigateMenu = () => {
+    navigate("/home/menu");
+  };
+  const navigateContact = () => {
+    navigate("/home/contact");
+  };
+
   return (
     <div className="Home overflow-hidden">
       <Carousel autoplay arrows infinite>
@@ -114,7 +123,7 @@ const Home = () => {
           </div>
           <div className="flex justify-center pb-10">
             <a
-              href="./home/menu"
+              onClick={navigateMenu}
               className="rounded-lg inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300"
             >
               View All Products
@@ -201,7 +210,7 @@ const Home = () => {
                     minima ullam culpa vero quaerat reprehenderit iure.
                   </p>
                   <a
-                    href=""
+                    onClick={navigateContact}
                     className="rounded-lg inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300"
                   >
                     Contact Us
