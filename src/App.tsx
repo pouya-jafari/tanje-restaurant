@@ -4,6 +4,7 @@ import RootLayout from "./pages/root";
 import StyledErrorPage from "./pages/Error";
 import Home from "./pages/Home";
 import Intro from "./pages/Intro";
+import Menu from "./pages/Menu";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,7 +15,13 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <RootLayout />,
-    children: [{ path: "/home/", element: <Home /> }],
+    children: [
+      { path: "/home/", element: <Home /> },
+      {
+        path: "/home/menu",
+        element: <Menu />,
+      },
+    ],
     errorElement: <StyledErrorPage />,
   },
 ]);

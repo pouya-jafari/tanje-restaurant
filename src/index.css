@@ -120,10 +120,10 @@
   transform: scale(0.95);
   transition: transform 0.2s ease;
 }
-
+/* Styles of TEXTs */
 #featuredMenu h1 {
   font-family: "Ubuntu", sans-serif;
-  /* color: #fbbf24; */
+
   color: #375b3b;
 }
 
@@ -131,7 +131,6 @@
   font-family: "Ubuntu", sans-serif;
 
   color: #375b3b;
-  /* color: #fbbf24; */
 }
 
 .Home h2 {
@@ -143,23 +142,7 @@
   color: #4d7c0f;
 }
 
-/* .ant-menu .ant-menu-sub .ant-menu-vertical {
-  background-color: #d8ad63;
-}
-
-.ant-menu-submenu {
-  background-color: #d8ad63;
-}
-
-.ant-menu-overflow-item .ant-menu-item {
-  background-color: #d8ad63;
-}
-.ant-menu-overflow-item
-  .ant-menu-overflow-item-rest
-  .ant-menu-submenu
-  .ant-menu-submenu-horizontal {
-  background-color: #d8ad63;
-} */
+/* Menu of Navigation Styles */
 
 .menu-label {
   color: white;
@@ -177,4 +160,50 @@
   .menu-icon {
     color: black !important;
   }
+}
+
+.menu-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu-category {
+  text-align: left;
+  padding: 20px 0;
+}
+
+.menu-item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.menu-item-price {
+  font-size: 1.2rem;
+  color: #d8ad63;
+  margin-left: 10px;
+}
+
+.menu-item-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.menu-item-description {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
 }

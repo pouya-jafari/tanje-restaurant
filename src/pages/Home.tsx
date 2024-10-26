@@ -112,6 +112,14 @@ const Home = () => {
               <Card price={20} item="pp" imgdat={imgTe} />
             </div>
           </div>
+          <div className="flex justify-center pb-10">
+            <a
+              href="./home/menu"
+              className="rounded-lg inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300"
+            >
+              View All Products
+            </a>
+          </div>
         </div>
 
         {/* Two Detail Section */}
@@ -193,7 +201,7 @@ const Home = () => {
                     minima ullam culpa vero quaerat reprehenderit iure.
                   </p>
                   <a
-                    href="#"
+                    href=""
                     className="rounded-lg inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300"
                   >
                     Contact Us

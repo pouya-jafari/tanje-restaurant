@@ -1,5 +1,5 @@
 import { Layout, Menu, MenuProps, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import tanjeLogo from "../assets/tanjeLogo.png";
 
 import Icon, {
@@ -26,54 +26,59 @@ const TanjeIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={CustomIcon} {...props} />
 );
 
-// const items = new Array(3).fill(null).map((_, index) => ({
-//   key: String(index + 1),
-//   label: `nav ${index + 1}`,
-// }));
-
 type MenuItem = Required<MenuProps>["items"][number];
-const items: MenuItem[] = [
-  {
-    label: <span className="menu-label">Home</span>,
-    key: "mail",
-    icon: <HomeFilled style={{ color: "white" }} className="menu-icon" />,
-  },
-  {
-    label: <span className="menu-label">Menu</span>,
-    key: "app",
-    icon: <BookOutlined style={{ color: "white" }} className="menu-icon" />,
-  },
-  {
-    label: <span className="menu-label">Catering</span>,
-    key: "cat",
-    icon: <MenuOutlined style={{ color: "white" }} className="menu-icon" />,
-  },
-  {
-    label: <span className="menu-label">Contact</span>,
-    key: "SubMenu",
-    icon: <PhoneFilled style={{ color: "white" }} className="menu-icon" />,
-    theme: "dark",
-    children: [
-      {
-        type: "group",
-        label: "",
-
-        children: [
-          {
-            label: "Contact",
-            key: "setting:1",
-          },
-          {
-            label: "About",
-            key: "setting:2",
-          },
-        ],
-      },
-    ],
-  },
-];
 
 const RootLayout = () => {
+  const navigate = useNavigate();
+  const HandleNavigateHome = () => {
+    navigate("/home");
+  };
+  const HandleNavigateMenu = () => {
+    navigate("/home/menu");
+  };
+  const items: MenuItem[] = [
+    {
+      label: <span className="menu-label">Home</span>,
+      key: "mail",
+      icon: <HomeFilled style={{ color: "white" }} className="menu-icon" />,
+      onClick: HandleNavigateHome,
+    },
+    {
+      label: <span className="menu-label">Menu</span>,
+      key: "app",
+      icon: <BookOutlined style={{ color: "white" }} className="menu-icon" />,
+      onClick: HandleNavigateMenu,
+    },
+    {
+      label: <span className="menu-label">Catering</span>,
+      key: "cat",
+      icon: <MenuOutlined style={{ color: "white" }} className="menu-icon" />,
+    },
+    {
+      label: <span className="menu-label">Contact</span>,
+      key: "SubMenu",
+      icon: <PhoneFilled style={{ color: "white" }} className="menu-icon" />,
+      theme: "dark",
+      children: [
+        {
+          type: "group",
+          label: "",
+
+          children: [
+            {
+              label: "Contact",
+              key: "setting:1",
+            },
+            {
+              label: "About",
+              key: "setting:2",
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -89,9 +94,9 @@ const RootLayout = () => {
           width: "100%",
           display: "flex",
           flexDirection: "row",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
         }}
       >
-        {/* <div className="demo-logo">logo</div> */}
         <Menu
           theme="light"
           className="font-bold menu-hover-effect"
