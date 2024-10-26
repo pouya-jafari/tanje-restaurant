@@ -5,6 +5,9 @@ const Intro = () => {
   function NavigateHandler() {
     navigate("/home");
   }
+  function menuNavigateHandler() {
+    navigate("/home/menu");
+  }
   return (
     <div className="banner">
       <div className="head-content">
@@ -16,7 +19,7 @@ const Intro = () => {
         /> */}
         <p>طعم اصیل ایرانی</p>
         <div>
-          <button type="button">
+          <button type="button" onClick={menuNavigateHandler}>
             <span></span>Contac Us
           </button>
           <button type="button" onClick={NavigateHandler}>

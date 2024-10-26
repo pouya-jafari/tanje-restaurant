@@ -36,6 +36,9 @@ const RootLayout = () => {
   const HandleNavigateMenu = () => {
     navigate("/home/menu");
   };
+  const HandleNavigateContact = () => {
+    navigate("/home/contact");
+  };
   const items: MenuItem[] = [
     {
       label: <span className="menu-label">Home</span>,
@@ -49,33 +52,13 @@ const RootLayout = () => {
       icon: <BookOutlined style={{ color: "white" }} className="menu-icon" />,
       onClick: HandleNavigateMenu,
     },
-    {
-      label: <span className="menu-label">Catering</span>,
-      key: "cat",
-      icon: <MenuOutlined style={{ color: "white" }} className="menu-icon" />,
-    },
+
     {
       label: <span className="menu-label">Contact</span>,
       key: "SubMenu",
       icon: <PhoneFilled style={{ color: "white" }} className="menu-icon" />,
       theme: "dark",
-      children: [
-        {
-          type: "group",
-          label: "",
-
-          children: [
-            {
-              label: "Contact",
-              key: "setting:1",
-            },
-            {
-              label: "About",
-              key: "setting:2",
-            },
-          ],
-        },
-      ],
+      onClick: HandleNavigateContact,
     },
   ];
 
