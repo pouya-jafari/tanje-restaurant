@@ -2,12 +2,7 @@ import { Layout, Menu, MenuProps, theme } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import tanjeLogo from "../assets/tanjeLogo.png";
 
-import Icon, {
-  BookOutlined,
-  HomeFilled,
-  MenuOutlined,
-  PhoneFilled,
-} from "@ant-design/icons";
+import Icon, { BookOutlined, HomeFilled, PhoneFilled } from "@ant-design/icons";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
 
 const { Header, Content } = Layout;
