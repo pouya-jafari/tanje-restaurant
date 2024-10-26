@@ -2,6 +2,7 @@ import { useState } from "react";
 import { APPETIZER_DATA } from "../data/appetizer";
 import { MAINCOURSES_DATA } from "../data/mainCourses";
 import { KEBAB_DATA } from "../data/kebabData";
+import { CloseOutlined } from "@ant-design/icons";
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState("Appetizers");
@@ -49,7 +50,7 @@ const Menu = () => {
 
         {/* Content Area */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/*  @ts-ignore */}
+          {/* @ts-ignore */}
           {menuContent[activeTab].map((item, index) => (
             <div
               key={index}
@@ -85,9 +86,16 @@ const Menu = () => {
             onClick={closeModal}
           >
             <div
-              className="bg-white rounded-lg overflow-hidden w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl transform transition-transform duration-300 scale-100 hover:scale-105"
+              className="bg-white rounded-lg overflow-hidden w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl relative transform transition-transform duration-300 scale-100 hover:scale-105"
               onClick={(e) => e.stopPropagation()}
             >
+              <button
+                className="absolute top-3 right-3 text-xl text-gray-700 hover:text-gray-900"
+                onClick={closeModal}
+              >
+                <CloseOutlined />
+              </button>
+              {/* Modal Content */}
               <img
                 // @ts-ignore
                 alt={selectedItem.title}
@@ -105,16 +113,20 @@ const Menu = () => {
                 {/*  @ts-ignore */}
                 <p className="mt-4 text-gray-600">{selectedItem.description}</p>
               </div>
-              <button
-                className="bg-[#d8ad63] text-white py-2 px-4 mt-4 w-full"
-                onClick={closeModal}
+
+              <a
+                href="https://www.ubereats.com/ca/store/tanje-restaurant/mIK8QDhDQGyf4zBqOwHxNQ?srsltid=AfmBOoqGfXhz5TmzZaij1ppvMr4OAgxHXX05cyXrd3llT7cdtf65Y8Ub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#d8ad63] text-white py-2 px-4 mt-4 w-full block text-center"
               >
-                Close
-              </button>
+                Order on Uber Eats
+              </a>
             </div>
           </div>
         )}
       </div>
+      {/* Footer */}
       <h3 className="text-center bg-slate-800 text-white">
         © 2024 Tanje Takeout. All Rights Reserved.
       </h3>

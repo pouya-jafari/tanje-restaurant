@@ -20,7 +20,7 @@ const Intro = () => {
         <p>طعم اصیل ایرانی</p>
         <div>
           <button type="button" onClick={menuNavigateHandler}>
-            <span></span>Menu
+            <span></span>Menu{" "}
           </button>
           <button type="button" onClick={NavigateHandler}>
             <span></span>Home

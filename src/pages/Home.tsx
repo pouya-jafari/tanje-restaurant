@@ -173,7 +173,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Secon Detail Section */}
+        {/* Second Detail Section */}
 
         <div className="bg-[#d8ad63]">
           <div id="AboutMenu2" dir="rtl">

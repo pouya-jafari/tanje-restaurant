@@ -5,6 +5,7 @@ import StyledErrorPage from "./pages/Error";
 import Home from "./pages/Home";
 import Intro from "./pages/Intro";
 import Menu from "./pages/Menu";
+import Contact from "./pages/Contact";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
         path: "/home/menu",
         element: <Menu />,
       },
+      { path: "/home/contact", element: <Contact /> },
     ],
     errorElement: <StyledErrorPage />,
   },
