@@ -3,13 +3,6 @@ import { APPETIZER_DATA } from "../data/appetizer";
 import { MAINCOURSES_DATA } from "../data/mainCourses";
 import { KEBAB_DATA } from "../data/kebabData";
 
-type MenuItem = {
-  title: string;
-  price: number;
-  description: string;
-  image: string;
-};
-
 const Menu = () => {
   const [activeTab, setActiveTab] = useState("Appetizers");
   const [selectedItem, setSelectedItem] = useState(null);
