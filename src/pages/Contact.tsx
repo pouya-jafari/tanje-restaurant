@@ -20,10 +20,10 @@ const Contact = () => {
           </div>
 
           <p className="pt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui
-            maiores dolores. Magnam, accusantium. Quo, distinctio? Autem, ab
-            quam quae exercitationem nobis cupiditate natus? Quasi tenetur
-            doloremque quibusdam sunt illo.
+            We’d love to connect with you! Whether you’re looking for a quick
+            takeout meal, planning a catered event, or simply have questions
+            about our menu, Tanje Takeout is here to serve you. Reach out, visit
+            us, or explore our services below.
           </p>
         </div>
       </div>
@@ -37,24 +37,26 @@ const Contact = () => {
               <CarryOutOutlined className="text-6xl text-[#383f47] mb-4" />
               <h3 className="text-2xl font-semibold mb-4">Takeout</h3>
               <p>
-                Convenient takeout options that allow you to grab your favorite
-                meals on the go without the wait.
+                Convenient takeout options let you enjoy your favorite Persian
+                dishes on the go. Order ahead for a seamless and quick pick-up.
               </p>
             </div>
             <div className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 duration-300">
               <CoffeeOutlined className="text-6xl text-[#383f47] mb-4" />
               <h3 className="text-2xl font-semibold mb-4">Catering</h3>
               <p>
-                Delicious catering options to make your events memorable with
-                flavors that satisfy every guest.
+                Elevate your next gathering with our catering services. Tanje
+                Takeout offers authentic Persian flavors that will delight your
+                guests and make your event unforgettable.
               </p>
             </div>
             <div className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 duration-300">
               <SmileOutlined className="text-6xl text-[#383f47] mb-4" />
               <h3 className="text-2xl font-semibold mb-4">Unique Taste</h3>
               <p>
-                Discover a unique taste experience that combines authentic
-                flavors and modern techniques.
+                Experience the distinctive taste of Persian cuisine, crafted
+                with passion and a blend of authentic flavors. Each dish offers
+                a taste journey unlike any other.
               </p>
             </div>
           </div>
@@ -75,7 +77,7 @@ const Contact = () => {
             <h2 className="font-bold text-3xl pb-2 pt-2 max-sm:text-xl">
               Phone Number
             </h2>
-            <p className="text-black">+12365512230</p>
+            <p className="text-black">+1 236-551-2230</p>
             <a
               href="tel:+12365512230"
               className="rounded-lg inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300 max-sm:my-[10px]"

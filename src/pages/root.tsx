@@ -25,6 +25,9 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const RootLayout = () => {
   const navigate = useNavigate();
+  const handleNavigateIntro = () => {
+    navigate("/");
+  };
   const HandleNavigateHome = () => {
     navigate("/home");
   };
@@ -84,12 +87,11 @@ const RootLayout = () => {
           items={items}
           style={{ flex: 1, minWidth: 0, fontSize: 20 }}
         />
-        <span className="text-black">
+        <span className="text-black" onClick={handleNavigateIntro}>
           <TanjeIcon />
         </span>
       </Header>
-      {/* style={{ padding: "0 48px" }} */}
-      {/* className="max-w-[800px]" */}
+
       <Content>
         <div
           style={{

@@ -1,5 +1,5 @@
 import fesnjoon from "../assets/mainCourses/fesenjoon.jpg";
-import gheime from "../assets/mainCourses/fesenjoon.jpg";
+import gheime from "../assets/mainCourses/Gheime.jpg";
 import ghelieMahi from "../assets/mainCourses/ghelieMahi.jpg";
 import ghormeSabzi from "../assets/mainCourses/ghormeSabzi.jpg";
 import gardan from "../assets/mainCourses/lambNeck.jpg";
@@ -23,7 +23,7 @@ export const MAINCOURSES_DATA = [
   },
   {
     image: ghelieMahi,
-    title: "Marinated Olives",
+    title: "Ghelie Mahi",
     description:
       "Refreshing snack of olives mixed in sweet pomegranate paste and crushed walnuts in one spoon and you will be hooked.",
     price: "$15.99",

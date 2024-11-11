@@ -1,6 +1,4 @@
 import { Carousel } from "antd";
-
-import { CAROUSEL_DATA } from "../data/carouselData";
 import imgTe from "../assets/pic3.jpg";
 import baghPimg from "../assets/baghlavaPlatter.jpg";
 import Card from "../components/Card";
@@ -9,6 +7,8 @@ import GoogleReviewsWidget from "../components/googleReview";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
 import Icon from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { KEBAB_DATA } from "../data/kebabData";
+import { MAINCOURSES_DATA } from "../data/mainCourses";
 
 const CustomIcon1 = () => {
   return (
@@ -68,12 +68,12 @@ const Home = () => {
   return (
     <div className="Home overflow-hidden">
       <Carousel autoplay arrows infinite>
-        {CAROUSEL_DATA.map((item, index) => (
+        {KEBAB_DATA.map((item, index) => (
           <div key={index}>
             <h3
               style={{
                 ...contentStyle,
-                backgroundImage: `url(${item.img})`,
+                backgroundImage: `url(${item.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -96,10 +96,12 @@ const Home = () => {
             </div>
 
             <p className="pt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui
-              maiores dolores. Magnam, accusantium. Quo, distinctio? Autem, ab
-              quam quae exercitationem nobis cupiditate natus? Quasi tenetur
-              doloremque quibusdam sunt illo.
+              At Tanje, we bring the authentic flavors of Persian cuisine to
+              North Vancouver. Our commitment is to provide a unique dining
+              experience, combining high-quality ingredients with traditional
+              recipes. Every dish is crafted with care to offer you the taste of
+              home-cooked Persian food, perfect for a quick bite or a family
+              meal.
             </p>
           </div>
         </div>
@@ -114,11 +116,44 @@ const Home = () => {
                 Featured Menu
               </h1>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 pt-10">
-              <Card price={20} item="pp" imgdat={imgTe} />
-              <Card price={20} item="pp" imgdat={imgTe} />
-              <Card price={20} item="pp" imgdat={imgTe} />
-              <Card price={20} item="pp" imgdat={imgTe} />
+            <div className="pt-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 pt-10 max-sm:flex max-sm:overflow-x-auto max-sm:space-x-4 max-sm:scrollbar-hide">
+                <div className="max-sm:flex-shrink-0 max-sm:w-[250px]">
+                  <Card
+                    price={12.99}
+                    item="Koubideh"
+                    imgdat={KEBAB_DATA[0].image}
+                    description={KEBAB_DATA[0].description}
+                  />
+                </div>
+                <div className="max-sm:flex-shrink-0 max-sm:w-[250px]">
+                  {" "}
+                  <Card
+                    price={12.99}
+                    item="Chicken Kebab"
+                    imgdat={KEBAB_DATA[1].image}
+                    description={KEBAB_DATA[1].description}
+                  />
+                </div>
+                <div className="max-sm:flex-shrink-0 max-sm:w-[250px]">
+                  {" "}
+                  <Card
+                    price={14.99}
+                    item="Walnut Stew"
+                    imgdat={MAINCOURSES_DATA[0].image}
+                    description={MAINCOURSES_DATA[0].description}
+                  />
+                </div>
+                <div className="max-sm:flex-shrink-0 max-sm:w-[250px]">
+                  {" "}
+                  <Card
+                    price={11.99}
+                    item="Mixed Herb Stew"
+                    imgdat={MAINCOURSES_DATA[3].image}
+                    description={MAINCOURSES_DATA[3].description}
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex justify-center pb-10">
@@ -139,27 +174,27 @@ const Home = () => {
             <div className="imgWrapper overflow-hidden rounded-md">
               <img
                 src={imgTe}
-                alt=""
+                alt="Delivery Service"
                 className="w-[100%] h-[100%] object-cover transition-transform duration-300 hover:scale-125"
               />
             </div>
-            <div className="contentWrapper  w-[100%] flex justify-center items-center pl-[30px] max-md:pl-0">
+            <div className="contentWrapper w-[100%] flex justify-center items-center pl-[30px] max-md:pl-0">
               <div className="content">
-                <span className="textWrapper  text-[20px] capitalize flex justify-start items-center gap-[15px] mb-[20px] max-sm:text-[18px] ">
+                <span className="textWrapper text-[20px] capitalize flex justify-start items-center gap-[15px] mb-[20px] max-sm:text-[18px] ">
                   <span className="inline-block bg-[#383f47] w-[70px] h-[5px]"></span>
-                  Best Taste
+                  Fast & Convenient
                 </span>
                 <h2
                   id="firstDivH2"
                   className="text-[40px] font-[700] pb-[20px] max-md:text-[30px] max-md:pb-[20px] max-sm:text-[25px]"
                 >
-                  Your Favorite Persian Cuisine
+                  Enjoy Tanje’s Persian Cuisine Delivered to Your Door
                 </h2>
                 <p className="text-[16px] leading-[25px] pb-[25px] max-md:leading-[24px] max-sm:text-[15px] max-sm:leading-[22px]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam ipsam consequatur natus voluptates, dolores ducimus
-                  modi placeat dicta cumque beatae! Perferendis explicabo amet
-                  minima ullam culpa vero quaerat reprehenderit iure.
+                  Craving the flavors of Tanje but can’t visit us in person? No
+                  problem! Order our authentic Persian dishes through UberEats
+                  or DoorDash and enjoy a delicious meal at home. With fast,
+                  reliable delivery, your favorite dishes are just a click away.
                 </p>
 
                 <iframe src="https://lottie.host/embed/cddbd957-5c97-400f-a8e6-80f4875eafe6/2fyUdfxwz3.json"></iframe>
@@ -172,7 +207,7 @@ const Home = () => {
                   </a>
                   <a
                     href="https://www.doordash.com/en-CA/store/tanje-takeout-north-vancouver-25143990/?srsltid=AfmBOoqAA0RnXYuIaQwJPqBTVuOF0GqVncEfLqgUrtsGcKy9ESIppcwh"
-                    className="rounded-md inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] text-center px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300 ml-5 max-sm:ml-0  max-sm:mt-4"
+                    className="rounded-md inline-block no-underline uppercase bg-[#383f47] text-[#fff] py-[15px] text-center px-[40px] tracking-[1px] select-none max-sm:text-[15px] max-sm:py-[10px] max-sm:px-[20px] hover:text-amber-400 hover:scale-105 transform transition-transform duration-300 ml-5 max-sm:ml-0 max-sm:mt-4"
                   >
                     <DoorDIcon />
                   </a>
@@ -186,28 +221,31 @@ const Home = () => {
 
         <div className="bg-[#d8ad63]">
           <div id="AboutMenu2" dir="rtl">
-            <div className="row w-[80%] max-w-[1170px]  grid grid-cols-2 gap-[50px] overflow-x-hidden p-[5rem] max-lg:grid-cols-1 max-md:w-[90%] ">
+            <div className="row w-[80%] max-w-[1170px] grid grid-cols-2 gap-[50px] overflow-x-hidden p-[5rem] max-lg:grid-cols-1 max-md:w-[90%]">
               <div className="imgWrapper overflow-hidden rounded-md">
                 <img
                   src={baghPimg}
-                  alt=""
+                  alt="Baghlava Platter"
                   className="w-[100%] h-[100%] object-cover transition-transform duration-300 hover:scale-125"
                 />
               </div>
-              <div className="contentWrapper  w-[100%] flex justify-center items-center pl-[30px] max-md:pl-0">
+              <div className="contentWrapper w-[100%] flex justify-center items-center pl-[30px] max-md:pl-0">
                 <div className="content">
-                  <span className="textWrapper  text-[20px] capitalize flex justify-start items-center gap-[15px] mb-[20px] max-sm:text-[18px] ">
-                    <span className="inline-block bg-[#383f47] w-[70px] h-[5px] "></span>
+                  <span className="textWrapper text-[20px] capitalize flex justify-start items-center gap-[15px] mb-[20px] max-sm:text-[18px]">
+                    <span className="inline-block bg-[#383f47] w-[70px] h-[5px]"></span>
                     Services
                   </span>
                   <h2 className="text-[40px] font-[700] text-white pb-[20px] max-md:text-[30px] max-md:pb-[20px] max-sm:text-[25px]">
-                    Your Favorite Persian Cuisine
+                    Exceptional Service, Authentic Taste
                   </h2>
                   <p className="text-[16px] leading-[25px] pb-[25px] max-md:leading-[24px] max-sm:text-[15px] max-sm:leading-[22px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam ipsam consequatur natus voluptates, dolores ducimus
-                    modi placeat dicta cumque beatae! Perferendis explicabo amet
-                    minima ullam culpa vero quaerat reprehenderit iure.
+                    At Tanje Takeout, we believe that great food deserves great
+                    service. Our team is dedicated to ensuring that every meal
+                    is not only delicious but also crafted with care and
+                    attention. From savory entrees to sweet treats like our
+                    signature baghlava, each item is a reflection of our passion
+                    for authentic Persian flavors. Experience the rich taste of
+                    traditional cuisine with the convenience of modern takeout.
                   </p>
                   <a
                     onClick={navigateContact}
@@ -220,6 +258,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         {/* Review Section */}
         <div id="review" className=" py-10 max-sm:px-10">
           <div className="flex justify-center items-center max-sm:text-[18px]">
