@@ -8,7 +8,7 @@ import Icon, {
   MenuOutlined,
 } from "@ant-design/icons";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
-import { useState } from "react";
+
 import { useMediaQuery } from "react-responsive";
 
 const { Header, Content } = Layout;
