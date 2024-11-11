@@ -1,9 +1,15 @@
-import { Layout, Menu, MenuProps, theme } from "antd";
+import { Layout, Menu, Dropdown, Button, theme, MenuProps } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import tanjeLogo from "../assets/tanjeLogo.png";
-
-import Icon, { BookOutlined, HomeFilled, PhoneFilled } from "@ant-design/icons";
+import Icon, {
+  BookOutlined,
+  HomeFilled,
+  PhoneFilled,
+  MenuOutlined,
+} from "@ant-design/icons";
 import { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const { Header, Content } = Layout;
 
@@ -25,49 +31,61 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const RootLayout = () => {
   const navigate = useNavigate();
+  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+
   const handleNavigateIntro = () => {
     navigate("/");
   };
-  const HandleNavigateHome = () => {
+  const handleNavigateHome = () => {
     navigate("/home");
   };
-  const HandleNavigateMenu = () => {
+  const handleNavigateMenu = () => {
     navigate("/home/menu");
   };
-  const HandleNavigateContact = () => {
+  const handleNavigateContact = () => {
     navigate("/home/contact");
   };
-  const items: MenuItem[] = [
-    {
-      label: <span className="menu-label">Home</span>,
-      key: "mail",
-      icon: <HomeFilled style={{ color: "white" }} className="menu-icon" />,
-      onClick: HandleNavigateHome,
-    },
-    {
-      label: <span className="menu-label">Menu</span>,
-      key: "app",
-      icon: <BookOutlined style={{ color: "white" }} className="menu-icon" />,
-      onClick: HandleNavigateMenu,
-    },
 
+  const menuItems: MenuItem[] = [
     {
-      label: <span className="menu-label">Contact</span>,
-      key: "SubMenu",
-      icon: <PhoneFilled style={{ color: "white" }} className="menu-icon" />,
-      theme: "dark",
-      onClick: HandleNavigateContact,
+      label: "Home",
+      key: "home",
+      icon: <HomeFilled />,
+      onClick: handleNavigateHome,
+    },
+    {
+      label: "Menu",
+      key: "menu",
+      icon: <BookOutlined />,
+      onClick: handleNavigateMenu,
+    },
+    {
+      label: "Contact",
+      key: "contact",
+      icon: <PhoneFilled />,
+      onClick: handleNavigateContact,
     },
   ];
+
+  const menu = <Menu items={menuItems} />;
 
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   return (
-    <Layout className="flex flex-col  h-screen bg-white ">
+    // className="bg-[#d8ad63]"
+
+    // <Menu
+
+    // />
+    // <span className="text-black" onClick={handleNavigateIntro}>
+    //   <TanjeIcon />
+    // </span>
+
+    <Layout className="flex flex-col h-screen bg-white">
       <Header
-        className="bg-[#d8ad63]"
+        className="bg-[#d8ad63] items-center"
         style={{
           position: "sticky",
           top: 0,
@@ -78,16 +96,31 @@ const RootLayout = () => {
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
         }}
       >
-        <Menu
-          theme="light"
-          className="font-bold menu-hover-effect"
-          direction="ltr"
-          mode="horizontal"
-          defaultSelectedKeys={["mail"]}
-          items={items}
-          style={{ flex: 1, minWidth: 0, fontSize: 20 }}
-        />
-        <span className="text-black" onClick={handleNavigateIntro}>
+        {isSmallScreen ? (
+          <Dropdown overlay={menu} trigger={["click"]}>
+            <Button
+              icon={
+                <MenuOutlined style={{ fontSize: "24px", color: "white" }} />
+              }
+              type="text"
+              style={{ border: "none" }}
+            />
+          </Dropdown>
+        ) : (
+          <Menu
+            theme="light"
+            className="font-bold menu-hover-effect"
+            direction="ltr"
+            mode="horizontal"
+            defaultSelectedKeys={["mail"]}
+            items={menuItems}
+            style={{ flex: 1, minWidth: 0, fontSize: 20 }}
+          />
+        )}
+        <span
+          className="text-black cursor-pointer mr-auto pt-5"
+          onClick={handleNavigateIntro}
+        >
           <TanjeIcon />
         </span>
       </Header>
